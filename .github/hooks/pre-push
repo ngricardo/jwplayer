@@ -2,7 +2,7 @@
 
 echo "Running ESLint & Karma"
 
-grunt lint
+npm run lint
 lint=$?
 if [ $lint -ne 0 ]; then
     echo "ESLint Failed. Use --no-verify to force push. Please don't. \n\n\n\n"
