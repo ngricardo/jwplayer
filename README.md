@@ -113,6 +113,12 @@ grunt karma:{BROWSER} e.g. grunt karma:chrome
 npm run lint
 ````
 
+6. Setup git pre-push hook
+# Will lint you code and run unit tests every time you push to remote
+````bash
+grunt hooks
+```` 
+
 ## Software License
 
 The use of this library is governed by a [Creative Commons license](http://creativecommons.org/licenses/by-nc-sa/3.0/). You can use, modify, copy, and distribute this edition as long as it’s for non-commercial use, you provide attribution, and share under a similar license.
