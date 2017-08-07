@@ -48,17 +48,13 @@ define([
                     return false;
                 }
 
-                // Not OK to use HTML5 with no extension
-                if (!MimeTypes[type]) {
-                    return false;
-                }
-
                 // Last, but not least, we ask the browser
                 // (But only if it's a video with an extension known to work in HTML5)
                 if (video.canPlayType) {
-                    var result = video.canPlayType(MimeTypes[type]);
+                    var result = video.canPlayType(MimeTypes[type]) || video.canPlayType(type);
                     return !!result;
                 }
+                
                 return false;
             }
         },
