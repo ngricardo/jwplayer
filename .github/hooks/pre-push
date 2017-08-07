@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Running ESLint & Karma"
+
+grunt lint
+lint=$?
+if [ $lint -ne 0 ]; then
+    echo "ESLint Failed. Use --no-verify to force push. Please don't. \n\n\n\n"
+  exit 1
+fi
+
+karma start --browsers=PhantomJS --reporters=mocha
+karma=$?
+if [ $karma -ne 0 ]; then
+    echo "Karma Failed. Use --no-verify to force push. Please don't. \n\n\n\n"
+  exit 1
+fi
